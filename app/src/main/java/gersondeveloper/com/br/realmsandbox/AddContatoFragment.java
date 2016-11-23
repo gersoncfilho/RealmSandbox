@@ -61,11 +61,11 @@ public class AddContatoFragment extends Fragment {
                 Snackbar.make(getView(),"Contato adicionado com sucesso!", Snackbar.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
-
-
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }
