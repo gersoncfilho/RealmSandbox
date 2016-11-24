@@ -17,6 +17,18 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug{
+            debuggable true
+            jniDebuggable true
+            minifyEnabled true
+        }
+    }
+}
+
+repositories{
+    maven{
+        url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
     }
 }
 
@@ -30,4 +42,8 @@ dependencies {
     compile 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:appcompat-v7:25.0.1'
+
+    /*Debug bridge*/
+    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.uphyca:stetho_realm:2.0.0'
 }
